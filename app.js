@@ -8,6 +8,7 @@ const forms = document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   const book = newBookList();
   printBooks([book]);
+  clearInput();
 });
 
 let DEFAULT_DATA = [
@@ -46,6 +47,13 @@ function newBookList() {
   DEFAULT_DATA.push(newBook);
   return newBook;
   // updateLocalStorage();
+}
+
+function clearInput() {
+  $author.value = "";
+  $pages.value = "";
+  $status.value = "";
+  $title.value = "";
 }
 
 function printBooks(books) {
